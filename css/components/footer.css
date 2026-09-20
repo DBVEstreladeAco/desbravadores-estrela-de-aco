@@ -1,0 +1,42 @@
+/* ==========================================================================
+   site-footer — footer.css
+   Local no projeto: css/components/footer.css
+   ========================================================================== */
+
+.site-footer {
+  background: var(--color-surface-dark);
+  padding: 3rem 1.25rem 2rem;
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.site-footer__coluna p {
+  max-width: none;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer__coluna ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-footer__coluna a {
+  color: var(--color-text-on-dark);
+}
+
+.site-footer__coluna a:hover {
+  color: var(--color-accent);
+}
+
+@media (min-width: 700px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

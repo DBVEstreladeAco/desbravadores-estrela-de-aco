@@ -1,0 +1,32 @@
+/* ==========================================================================
+   sobre.css — estilos específicos da página Sobre
+   Local no projeto: css/pages/sobre.css
+   ========================================================================== */
+
+.o-que-sao-desbravadores {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.o-que-sao-desbravadores__media img {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .o-que-sao-desbravadores {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.nossa-historia,
+.nossa-missao {
+  max-width: 800px;
+}
+
+.nossa-historia p,
+.nossa-missao p {
+  max-width: none;
+}

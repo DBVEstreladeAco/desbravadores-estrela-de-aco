@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube de Desbravadores Estrela de Aço | Ipatinga/MG</title>
+  <meta name="description" content="Clube de Desbravadores Estrela de Aço, em Ipatinga/MG, desde 2002. Aventura, aprendizado e amizade para crianças e adolescentes.">
+
+  <!-- Google Fonts: Big Shoulders Display (títulos) + Work Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/layout.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: logo-header.png
+          Local: assets/images/logo/
+          Proporção: aprox. 1:1, altura fixa ~48px
+          Uso: logo do clube dentro do header, versão que funcione sobre fundo verde petróleo
+          Descrição visual: versão simplificada/clara da logo Estrela de Aço para uso pequeno
+        -->
+        <img src="assets/images/logo/logo-header.png" alt="Clube de Desbravadores Estrela de Aço">
+      </a>
+
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <button class="site-header__toggle" aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <span class="site-header__toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <ul class="site-header__menu" id="menu-principal">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="pages/sobre.html">Sobre</a></li>
+          <li><a href="pages/atividades.html">Atividades</a></li>
+          <li><a href="pages/agenda.html">Agenda</a></li>
+          <li><a href="pages/participe.html" class="site-header__cta">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <!--
+        [IMAGEM NECESSÁRIA]
+        Nome sugerido: hero-home.jpg
+        Local: assets/images/hero/
+        Proporção: 16:9 ou mais larga, alta resolução (mín. 1920px de largura)
+        Uso: fundo do hero da Home
+        Descrição visual: foto real de uma atividade do clube (acampamento, trilha ou
+        reunião ao ar livre) — não usar imagem de banco de imagens genérica
+      -->
+      <div class="hero__media">
+        <img src="assets/images/hero/hero-home.jpg" alt="Desbravadores do Estrela de Aço em atividade ao ar livre">
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content">
+        <h1>Você não está apenas entrando em um clube.<br>Está entrando em uma experiência.</h1>
+        <p class="text-on-dark">Aventura, amizade e propósito para crianças e adolescentes em Ipatinga.</p>
+        <div class="hero__actions">
+          <a href="pages/participe.html" class="btn btn--primary">Quero participar</a>
+          <a href="pages/sobre.html" class="btn btn--secondary btn--outline">Conheça o clube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         AVISO DE DESTAQUE — só deve aparecer quando houver evento em destaque.
+         Por padrão fica oculto (hidden). O JS de agenda remove o "hidden"
+         quando existir um evento marcado como destaque.
+         ==================================================================== -->
+    <section class="highlight-banner" id="aviso-destaque" hidden>
+      <div class="highlight-banner__inner">
+        <p class="eyebrow">Próxima atividade</p>
+        <h3 class="highlight-banner__title">[Nome do evento]</h3>
+        <p>[Data e descrição curta do evento]</p>
+        <a href="pages/agenda.html" class="btn btn--accent">Ver detalhes</a>
+      </div>
+    </section>
+
+    <!-- ==================== AQUI VOCÊ PODE... ==================== -->
+    <section class="section section--alt aqui-voce-pode">
+      <h2>Aqui você pode...</h2>
+      <div class="aqui-voce-pode__grid">
+        <article class="aqui-voce-pode__item">
+          <h3>Explorar</h3>
+          <p>Saia da rotina. Acampamentos, trilhas e desafios ao ar livre.</p>
+        </article>
+        <article class="aqui-voce-pode__item">
+          <h3>Aprender</h3>
+          <p>Especialidades e habilidades práticas que você realmente pode usar.</p>
+        </article>
+        <article class="aqui-voce-pode__item">
+          <h3>Servir</h3>
+          <p>Ações sociais e campanhas que fazem diferença de verdade.</p>
+        </article>
+        <article class="aqui-voce-pode__item">
+          <h3>Fazer amigos</h3>
+          <p>Amizades e experiências compartilhadas que ficam para a vida toda.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== PRÓXIMAS ATIVIDADES ==================== -->
+    <section class="section proximas-atividades">
+      <h2>Próximas atividades</h2>
+      <!--
+        Esta lista será populada dinamicamente por js/pages/agenda.js
+        a partir do Google Calendar público (ver integrations/calendar/).
+        Os três cards abaixo são placeholder de estrutura.
+      -->
+      <div class="proximas-atividades__grid" id="lista-proximas-atividades">
+        <article class="card">
+          <span class="card__categoria" data-categoria="aventura">Aventura</span>
+          <h3 class="card__titulo">[Nome da atividade]</h3>
+          <p class="card__data">[Data]</p>
+        </article>
+        <article class="card">
+          <span class="card__categoria" data-categoria="aprendizado">Aprendizado</span>
+          <h3 class="card__titulo">[Nome da atividade]</h3>
+          <p class="card__data">[Data]</p>
+        </article>
+        <article class="card">
+          <span class="card__categoria" data-categoria="servico">Serviço</span>
+          <h3 class="card__titulo">[Nome da atividade]</h3>
+          <p class="card__data">[Data]</p>
+        </article>
+      </div>
+      <a href="pages/agenda.html" class="btn btn--secondary">Ver agenda completa</a>
+    </section>
+
+    <!-- ==================== O QUE SÃO OS DESBRAVADORES ==================== -->
+    <section class="section section--alt o-que-sao">
+      <div class="o-que-sao__conteudo">
+        <h2>O que são os Desbravadores?</h2>
+        <p>
+          Os Desbravadores são um clube para crianças e adolescentes de 10 a 15 anos,
+          com atividades que unem aventura, aprendizado prático e formação de caráter.
+          Reunimos jovens da nossa cidade em um ambiente seguro, organizado e cheio
+          de propósito.
+        </p>
+      </div>
+      <div class="o-que-sao__media">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: sobre-desbravadores.jpg
+          Local: assets/images/experiences/
+          Proporção: 4:3 ou 1:1
+          Uso: imagem de apoio ao lado do texto explicativo
+          Descrição visual: grupo de desbravadores em atividade de equipe
+        -->
+        <img src="assets/images/experiences/sobre-desbravadores.jpg" alt="Grupo de Desbravadores em atividade">
+      </div>
+    </section>
+
+    <!-- ==================== CONHEÇA O ESTRELA DE AÇO ==================== -->
+    <section class="section conheca-clube">
+      <div class="conheca-clube__media">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: clube-estrela-de-aco.jpg
+          Local: assets/images/experiences/
+          Proporção: 4:3 ou 1:1
+          Uso: imagem de apoio ao lado do texto sobre o clube local
+          Descrição visual: foto do clube Estrela de Aço em atividade (não genérica)
+        -->
+        <img src="assets/images/experiences/clube-estrela-de-aco.jpg" alt="Clube de Desbravadores Estrela de Aço em atividade">
+      </div>
+      <div class="conheca-clube__conteudo">
+        <h2>Conheça o Estrela de Aço</h2>
+        <p>
+          Desde 2002, o Estrela de Aço reúne crianças, adolescentes e famílias de
+          Ipatinga em torno de uma missão: viver aventuras reais enquanto se
+          aprende, se serve e se cresce em comunidade.
+        </p>
+        <a href="pages/sobre.html" class="btn btn--secondary">Conheça nossa história</a>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIÊNCIAS / FOTOGRAFIAS ==================== -->
+    <section class="section section--alt experiencias">
+      <h2>Experiências</h2>
+      <div class="experiencias__grid">
+        <!--
+          [IMAGEM NECESSÁRIA] x3 (mínimo)
+          Nome sugerido: experiencia-01.jpg, experiencia-02.jpg, experiencia-03.jpg
+          Local: assets/images/experiences/
+          Proporção: 1:1 ou 4:5
+          Uso: mosaico de fotos reais de atividades do clube
+          Descrição visual: fotografia natural, sem filtro exagerado, mostrando
+          crianças/adolescentes em aventura, aprendizado, serviço ou convivência
+        -->
+        <img src="assets/images/experiences/experiencia-01.jpg" alt="Atividade do Estrela de Aço">
+        <img src="assets/images/experiences/experiencia-02.jpg" alt="Atividade do Estrela de Aço">
+        <img src="assets/images/experiences/experiencia-03.jpg" alt="Atividade do Estrela de Aço">
+      </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="section cta-final on-dark">
+      <h2>Pronto para conhecer?</h2>
+      <p class="text-on-dark">Venha conhecer o clube. Toda a nossa comunidade quer te receber.</p>
+      <a href="pages/participe.html" class="btn btn--primary">Quero participar</a>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer on-dark">
+    <div class="site-footer__inner">
+      <div class="site-footer__coluna">
+        <p><strong>Clube de Desbravadores Estrela de Aço</strong></p>
+        <p>Ipatinga/MG · Desde 2002</p>
+      </div>
+
+      <nav class="site-footer__coluna" aria-label="Links do rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pages/sobre.html">Sobre</a></li>
+          <li><a href="pages/atividades.html">Atividades</a></li>
+          <li><a href="pages/agenda.html">Agenda</a></li>
+          <li><a href="pages/participe.html">Participe</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__coluna">
+        <!-- [PENDENTE] links de redes sociais — ver integrations/social/ -->
+        <p>Não é da região?
+          <a href="https://www.adventistas.org/pt/desbravadores/encontre-um-clube/" target="_blank" rel="noopener">
+            Encontre um clube perto de você
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/core/navigation.js"></script>
+  <script src="js/core/main.js"></script>
+</body>
+</html>

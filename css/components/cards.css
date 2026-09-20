@@ -1,0 +1,41 @@
+/* ==========================================================================
+   cards.css
+   Local no projeto: css/components/cards.css
+   ========================================================================== */
+
+.card {
+  background: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Etiqueta de categoria — só uma faixa de cor, nunca o card inteiro pintado */
+.card__categoria {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-on-dark);
+}
+
+.card__categoria[data-categoria="aventura"]     { background: var(--category-aventura); }
+.card__categoria[data-categoria="aprendizado"]  { background: var(--category-aprendizado); }
+.card__categoria[data-categoria="servico"]      { background: var(--category-servico); color: var(--color-text-on-accent); }
+.card__categoria[data-categoria="lideranca"]    { background: var(--category-lideranca); }
+.card__categoria[data-categoria="convivencia"]  { background: var(--category-convivencia); color: var(--color-text-on-accent); }
+
+.card__titulo {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.card__data {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}

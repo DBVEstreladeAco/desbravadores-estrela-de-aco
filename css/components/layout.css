@@ -1,0 +1,55 @@
+/* ==========================================================================
+   layout.css — estrutura de seção reutilizável em todas as páginas
+   Local no projeto: css/components/layout.css
+
+   Contém os blocos de layout genéricos (.section, .page-header, .cta-final)
+   usados por Home e por todas as páginas internas. Estilo específico de
+   uma página (ex.: hero, mosaico de fotos) continua em css/pages/*.css.
+   ========================================================================== */
+
+.section {
+  padding: 4rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section--alt {
+  background: var(--color-background-alt);
+  max-width: none;
+}
+.section--alt > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section.on-dark {
+  background: var(--color-surface-dark);
+  max-width: none;
+  text-align: center;
+  padding: 5rem 1.25rem;
+}
+
+/* ---- Cabeçalho simples de página interna (Sobre, Atividades, etc.) ---- */
+.page-header {
+  background: var(--color-background-alt);
+  padding: 4rem 1.25rem 3rem;
+}
+
+.page-header__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page-header__inner h1 {
+  margin: 0.5rem 0 1rem;
+}
+
+/* ---- CTA final (reutilizado em todas as páginas) ---- */
+.cta-final h2 {
+  margin-bottom: 0.75rem;
+}
+
+.cta-final p {
+  margin: 0 auto 1.75rem;
+}

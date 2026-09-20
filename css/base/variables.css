@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Clube de Desbravadores Estrela de Aço — Ipatinga/MG
+   variables.css — Identidade visual (paleta v2)
+   Local no projeto: css/base/variables.css
+   ========================================================================== */
+
+:root {
+
+  /* ------------------------------------------------------------------
+     1. CORES BRUTAS (paleta física)
+     Não usar estas variáveis diretamente no CSS de componentes.
+     Elas existem só para nomear os HEX uma única vez.
+     Use sempre as variáveis SEMÂNTICAS da seção 2.
+     ------------------------------------------------------------------ */
+
+  /* Identidade principal */
+  --raw-verde-petroleo:   #0F4C46;
+  --raw-azul-profundo:    #0D3B66;
+  --raw-grafite:          #1E1E1E;
+  --raw-offwhite:         #F4F3EF;
+
+  /* Destaques */
+  --raw-dourado:          #C89B3C;
+  --raw-amarelo:          #F4C430;
+  --raw-vermelho:         #B83A32;
+
+  /* Apoio */
+  --raw-cinza-texto:      #5E686F; /* corrigido de #68727A — contraste AA */
+  --raw-verde-natural:    #2E7D32;
+  --raw-azul-ceu:         #5B8DB8;
+
+  /* Fundos */
+  --raw-fundo-base:       #F4F3EF; /* única cor de fundo claro do site */
+  --raw-fundo-alt:        #F0F0EC; /* alternância entre seções */
+  --raw-fundo-escuro:     #0E1F24; /* rodapé, CTA final, banners */
+  --raw-fundo-textura:    #1A2A2F; /* overlay sobre foto, mapas, aventura */
+
+
+  /* ------------------------------------------------------------------
+     2. CORES SEMÂNTICAS (usar estas no CSS de componentes e páginas)
+     ------------------------------------------------------------------ */
+
+  /* Marca / identidade */
+  --color-primary:        var(--raw-verde-petroleo);
+  --color-secondary:      var(--raw-azul-profundo);
+
+  /* Texto */
+  --color-text:           var(--raw-grafite);
+  --color-text-secondary: var(--raw-cinza-texto);
+  --color-text-on-dark:   var(--raw-offwhite);
+  --color-text-on-accent: var(--raw-grafite); /* texto sobre amarelo/dourado */
+
+  /* Fundos */
+  --color-background:     var(--raw-fundo-base);
+  --color-background-alt: var(--raw-fundo-alt);
+  --color-surface-dark:   var(--raw-fundo-escuro);
+  --color-surface-texture:var(--raw-fundo-textura);
+
+  /* Destaque / ação */
+  --color-accent:         var(--raw-amarelo);   /* botão de destaque, hover, links no dark */
+  --color-accent-special: var(--raw-dourado);   /* uso decorativo: borda, ícone, fundo escuro — NUNCA texto em fundo claro */
+  --color-danger:         var(--raw-vermelho);  /* alerta / erro — nunca CTA comum */
+
+  /* Apoio visual (uso pontual, nunca em texto longo) */
+  --color-support-green:  var(--raw-verde-natural);
+  --color-support-blue:   var(--raw-azul-ceu);   /* ícone/chip — evitar como texto/traço fino em fundo claro */
+
+  /* Bordas */
+  --color-border:         #D6D8D6;
+  --color-border-active:  var(--raw-verde-petroleo);
+  --color-border-danger:  var(--raw-vermelho);
+
+
+  /* ------------------------------------------------------------------
+     3. CATEGORIAS DE ATIVIDADES
+     (reaproveitam cores já existentes — não são cores novas)
+     ------------------------------------------------------------------ */
+
+  --category-aventura:     var(--raw-verde-petroleo);
+  --category-aprendizado:  var(--raw-azul-profundo);
+  --category-servico:      var(--raw-dourado);
+  --category-lideranca:    var(--raw-cinza-texto);
+  --category-convivencia:  var(--raw-azul-ceu);
+
+  /* Agenda usa o dourado como cor temática — só em borda/ícone/fundo escuro */
+  --color-agenda-accent:   var(--raw-dourado);
+
+
+  /* ------------------------------------------------------------------
+     4. TIPOGRAFIA (placeholder — ajustar quando a fonte for escolhida)
+     ------------------------------------------------------------------ */
+
+  --font-primary: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ==========================================================================
+   REGRAS DE USO — ler antes de aplicar cor em um componente novo
+
+   1. Nunca use --raw-* fora deste arquivo. Sempre use as variáveis
+      semânticas (--color-*, --category-*).
+
+   2. --color-accent-special (dourado) e --color-support-blue (azul céu)
+      NÃO passam no contraste WCAG AA como texto sobre --color-background.
+      Use-as apenas em: borda, ícone, fundo de chip/etiqueta com texto
+      escuro por cima, ou sobre --color-surface-dark.
+
+   3. --color-danger (vermelho) é só para alerta, erro ou aviso importante.
+      Nunca usar como botão "Participar" ou CTA comum.
+
+   4. --color-background e --color-background-alt são o único par de
+      contraste de fundo claro do site. Alternar entre eles para separar
+      seções — não introduzir um terceiro tom de fundo claro.
+   ========================================================================== */
