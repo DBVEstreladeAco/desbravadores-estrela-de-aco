@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades | Clube de Desbravadores Estrela de Aço</title>
+  <meta name="description" content="Conheça as atividades do Clube de Desbravadores Estrela de Aço: aventura, aprendizado, serviço, liderança e convivência em Ipatinga/MG.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/base/variables.css">
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/base/typography.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/layout.css">
+  <link rel="stylesheet" href="../css/pages/atividades.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="../index.html" class="site-header__logo">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: logo-header.png
+          Local: assets/images/logo/
+          Uso: logo do clube dentro do header.
+          Descrição: versão da logo Estrela de Aço adequada para uso pequeno sobre
+          fundo verde petróleo.
+        -->
+        <img src="../assets/images/logo/logo-header.png" alt="Clube de Desbravadores Estrela de Aço">
+      </a>
+
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <button class="site-header__toggle" aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <span class="site-header__toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <ul class="site-header__menu" id="menu-principal">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="atividades.html" aria-current="page">Atividades</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
+          <li><a href="participe.html" class="site-header__cta">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="page-header atividades-header">
+      <!--
+        [IMAGEM DE FUNDO NECESSÁRIA]
+        Nome sugerido: atividades-hero.jpg
+        Local: assets/images/activities/
+        Proporção: 16:9 ou mais larga, alta resolução.
+        Uso: imagem de fundo do cabeçalho da página Atividades.
+        Descrição: fotografia real do Estrela de Aço em uma atividade ao ar livre,
+        com espaço visual para leitura do título.
+      -->
+      <div class="atividades-header__placeholder" aria-hidden="true">
+        <span>Imagem de fundo: atividades-hero.jpg</span>
+      </div>
+
+      <div class="page-header__content">
+        <p class="eyebrow">Viva, aprenda e participe</p>
+        <h1>Atividades</h1>
+        <p>
+          No Estrela de Aço, aprender acontece fazendo. As atividades combinam
+          aventura, habilidades práticas, serviço, responsabilidade e convivência.
+        </p>
+      </div>
+    </section>
+
+    <section class="section atividades-introducao">
+      <div class="atividades-introducao__conteudo">
+        <p class="eyebrow">Mais do que uma lista</p>
+        <h2>O que fazemos juntos</h2>
+        <p>
+          Cada atividade tem um propósito. Algumas desafiam você a explorar novos
+          lugares; outras ensinam algo que pode ser usado no dia a dia. Também há
+          momentos para servir, assumir responsabilidades e simplesmente estar
+          com outras pessoas.
+        </p>
+      </div>
+
+      <div class="atividades-introducao__icone" aria-hidden="true">
+        <!--
+          [ÍCONE NECESSÁRIO]
+          Tipo: ícone de bússola/trilha/exploração.
+          Local sugerido: assets/icons/
+          Uso: apoio visual da introdução da página Atividades.
+          Estilo: desenho simples, traço escuro, compatível com a identidade visual.
+        -->
+        <span>Ícone de exploração</span>
+      </div>
+    </section>
+
+    <section class="section section--alt atividades-categorias" aria-labelledby="titulo-categorias">
+      <div class="section-heading">
+        <p class="eyebrow">Cinco caminhos</p>
+        <h2 id="titulo-categorias">Encontre o que combina com você</h2>
+      </div>
+
+      <div class="atividades-categorias__grid">
+        <a class="atividade-card atividade-card--aventura" href="#aventura">
+          <span class="atividade-card__icone" aria-hidden="true">
+            <!-- [ÍCONE NECESSÁRIO] Ícone de montanha/trilha — assets/icons/icon-aventura.svg -->
+            Ícone de aventura
+          </span>
+          <span class="atividade-card__categoria">Aventura</span>
+          <h3>Saia da rotina. Explore.</h3>
+          <p>Acampamentos, trilhas, desafios ao ar livre e novas experiências.</p>
+        </a>
+
+        <a class="atividade-card atividade-card--aprendizado" href="#aprendizado">
+          <span class="atividade-card__icone" aria-hidden="true">
+            <!-- [ÍCONE NECESSÁRIO] Ícone de aprendizado/habilidade — assets/icons/icon-aprendizado.svg -->
+            Ícone de aprendizado
+          </span>
+          <span class="atividade-card__categoria">Aprendizado</span>
+          <h3>Aprenda fazendo.</h3>
+          <p>Especialidades e habilidades práticas para descobrir novos interesses.</p>
+        </a>
+
+        <a class="atividade-card atividade-card--servico" href="#servico">
+          <span class="atividade-card__icone" aria-hidden="true">
+            <!-- [ÍCONE NECESSÁRIO] Ícone de mãos/serviço — assets/icons/icon-servico.svg -->
+            Ícone de serviço
+          </span>
+          <span class="atividade-card__categoria">Serviço</span>
+          <h3>Faça algo que faça diferença.</h3>
+          <p>Ações sociais, campanhas e projetos voltados para a comunidade.</p>
+        </a>
+
+        <a class="atividade-card atividade-card--lideranca" href="#lideranca">
+          <span class="atividade-card__icone" aria-hidden="true">
+            <!-- [ÍCONE NECESSÁRIO] Ícone de liderança/equipe — assets/icons/icon-lideranca.svg -->
+            Ícone de liderança
+          </span>
+          <span class="atividade-card__categoria">Liderança</span>
+          <h3>Assuma responsabilidades.</h3>
+          <p>Trabalho em equipe, organização, autonomia e desenvolvimento pessoal.</p>
+        </a>
+
+        <a class="atividade-card atividade-card--convivencia" href="#convivencia">
+          <span class="atividade-card__icone" aria-hidden="true">
+            <!-- [ÍCONE NECESSÁRIO] Ícone de pessoas/amizade — assets/icons/icon-convivencia.svg -->
+            Ícone de convivência
+          </span>
+          <span class="atividade-card__categoria">Convivência</span>
+          <h3>Conheça pessoas. Faça amizades.</h3>
+          <p>Momentos compartilhados que fortalecem amizade, respeito e comunidade.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section atividade-destaque" id="aventura">
+      <div class="atividade-destaque__media atividade-destaque__media--aventura">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: aventura-01.jpg
+          Local: assets/images/activities/
+          Proporção: 4:3 ou 3:2.
+          Uso: fotografia principal da categoria Aventura.
+          Descrição: atividade real do clube ao ar livre, preferencialmente com
+          trilha, acampamento, natureza ou desafio em equipe.
+        -->
+        <span>Imagem: aventura-01.jpg</span>
+      </div>
+
+      <div class="atividade-destaque__conteudo">
+        <p class="atividade-destaque__categoria">Aventura</p>
+        <h2>Saia da rotina. Explore.</h2>
+        <p>
+          Acampamentos, trilhas, atividades ao ar livre e desafios colocam o
+          aprendizado em movimento. É um espaço para experimentar, colaborar e
+          descobrir do que você é capaz.
+        </p>
+        <p>
+          As atividades e saídas divulgadas publicamente serão apresentadas na
+          <a href="agenda.html">Agenda</a>, com as informações necessárias para
+          participação.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt atividade-destaque atividade-destaque--invertido" id="aprendizado">
+      <div class="atividade-destaque__media atividade-destaque__media--aprendizado">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: aprendizado-01.jpg
+          Local: assets/images/activities/
+          Proporção: 4:3 ou 3:2.
+          Uso: fotografia principal da categoria Aprendizado.
+          Descrição: desbravadores aprendendo ou praticando uma habilidade.
+        -->
+        <span>Imagem: aprendizado-01.jpg</span>
+      </div>
+
+      <div class="atividade-destaque__conteudo">
+        <p class="atividade-destaque__categoria">Aprendizado</p>
+        <h2>Aprenda coisas que você realmente pode usar.</h2>
+        <p>
+          As especialidades e atividades práticas ajudam a desenvolver
+          conhecimentos, habilidades e novos interesses de forma participativa.
+        </p>
+        <p>
+          O conteúdo específico de cada programação pode variar conforme o
+          planejamento do clube.
+        </p>
+      </div>
+    </section>
+
+    <section class="section atividade-destaque" id="servico">
+      <div class="atividade-destaque__media atividade-destaque__media--servico">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: servico-01.jpg
+          Local: assets/images/activities/
+          Proporção: 4:3 ou 3:2.
+          Uso: fotografia principal da categoria Serviço.
+          Descrição: ação social, arrecadação, campanha ou atividade comunitária real.
+        -->
+        <span>Imagem: servico-01.jpg</span>
+      </div>
+
+      <div class="atividade-destaque__conteudo">
+        <p class="atividade-destaque__categoria">Serviço</p>
+        <h2>Faça algo que faça diferença.</h2>
+        <p>
+          Servir é colocar aquilo que aprendemos em prática. O clube participa
+          de ações sociais, campanhas e iniciativas que ajudam outras pessoas.
+        </p>
+        <a href="agenda.html" class="btn btn--secondary">Ver ações na agenda</a>
+      </div>
+    </section>
+
+    <section class="section section--alt atividade-destaque atividade-destaque--invertido" id="lideranca">
+      <div class="atividade-destaque__media atividade-destaque__media--lideranca">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: lideranca-01.jpg
+          Local: assets/images/activities/
+          Proporção: 4:3 ou 3:2.
+          Uso: fotografia principal da categoria Liderança.
+          Descrição: equipe trabalhando junta, organização de atividade ou tarefa prática.
+        -->
+        <span>Imagem: lideranca-01.jpg</span>
+      </div>
+
+      <div class="atividade-destaque__conteudo">
+        <p class="atividade-destaque__categoria">Liderança</p>
+        <h2>Aprenda a assumir responsabilidades.</h2>
+        <p>
+          Liderança também é aprender a ouvir, colaborar, organizar e cuidar do
+          que está sob sua responsabilidade. O desenvolvimento acontece em equipe,
+          de forma progressiva.
+        </p>
+      </div>
+    </section>
+
+    <section class="section atividade-destaque" id="convivencia">
+      <div class="atividade-destaque__media atividade-destaque__media--convivencia">
+        <!--
+          [IMAGEM NECESSÁRIA]
+          Nome sugerido: convivencia-01.jpg
+          Local: assets/images/activities/
+          Proporção: 4:3 ou 3:2.
+          Uso: fotografia principal da categoria Convivência.
+          Descrição: momento de integração e amizade entre participantes.
+        -->
+        <span>Imagem: convivencia-01.jpg</span>
+      </div>
+
+      <div class="atividade-destaque__conteudo">
+        <p class="atividade-destaque__categoria">Convivência</p>
+        <h2>Conheça pessoas. Faça amizades. Viva bons momentos.</h2>
+        <p>
+          Nem toda atividade precisa ser um grande desafio. A convivência, o
+          respeito e a amizade também fazem parte do que construímos juntos.
+        </p>
+      </div>
+    </section>
+
+    <section class="section cta-final on-dark atividades-cta">
+      <p class="eyebrow">Quer conhecer de perto?</p>
+      <h2>Veja quando as próximas atividades acontecem.</h2>
+      <p class="text-on-dark">
+        Consulte a agenda para encontrar reuniões, programações e ações abertas à comunidade.
+      </p>
+      <a href="agenda.html" class="btn btn--primary">Ver agenda</a>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark">
+    <div class="site-footer__inner">
+      <div class="site-footer__coluna">
+        <p><strong>Clube de Desbravadores Estrela de Aço</strong></p>
+        <p>Ipatinga/MG · Desde 2002</p>
+      </div>
+
+      <nav class="site-footer__coluna" aria-label="Links do rodapé">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="atividades.html">Atividades</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
+          <li><a href="participe.html">Participe</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__coluna">
+        <!-- [PENDENTE] Links de redes sociais — ver integrations/social/ -->
+        <p>
+          Não é da região?
+          <a href="https://www.adventistas.org/pt/desbravadores/encontre-um-clube/" target="_blank" rel="noopener">
+            Encontre um clube perto de você
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/core/navigation.js"></script>
+  <script src="../js/core/main.js"></script>
+</body>
+</html>

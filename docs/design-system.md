@@ -1,8 +1,8 @@
-# Clube de Desbravadores Estrela de Aço — Documentação do Projeto
+# Design System — Clube de Desbravadores Estrela de Aço
 
-> **Status:** documento vivo. Vai sendo atualizado ao longo do desenvolvimento.
-> **Última atualização:** paleta v2 (cores enxugadas + correções de contraste WCAG AA).
-> **Local sugerido no projeto:** `docs/design-system.md`
+**Status:** documento vivo do projeto  
+**Versão:** 2.x  
+**Última etapa documentada:** revisão técnica de Atividades/Participe/Agenda + Agenda funcional (ver seção 14)
 
 ---
 
@@ -11,240 +11,371 @@
 - **Nome:** Clube de Desbravadores Estrela de Aço
 - **Local:** Ipatinga/MG — AML
 - **Fundação:** 2002
-- **Stack:** HTML5, CSS3, JavaScript puro (sem frameworks)
-- **Repositório:** `github.com/DBVEstreladeAco/desbravadores-estrela-de-aco`
-- **Hospedagem:** ainda não escolhida (não será local — a definir)
+- **Tecnologia:** HTML5 + CSS3 + JavaScript puro
+- **Conceito:** **Jovem + Aventura + Propósito**
 
-Conceito central: **"Jovem + Aventura + Propósito"**. Jovem sem ser infantil,
-aventureiro sem parecer radical, espiritual sem parecer só institucional,
-profissional sem parecer corporativo.
-
-A logo é industrial/metálica; o site **não** deve copiar essa estética —
-o site representa a experiência do clube, a logo representa o símbolo.
+A identidade do site não deve copiar a estética metálica da logo. A logo representa o clube; o site representa a experiência do clube.
 
 ---
 
-## 2. Arquitetura de conteúdo
+## 2. Navegação principal
 
-Navegação principal: **Início · Sobre · Atividades · Agenda · Participe**
+A navegação principal permanece:
 
-Jornada do visitante:
-`Descobrir → Entender → Se interessar → Conhecer atividades → Consultar agenda → Participar`
+1. Início
+2. Sobre
+3. Atividades
+4. Agenda
+5. Participe
 
-Decisões fixas (não reabrir sem motivo forte):
-- Sem página de Galeria isolada — fotografia entra dentro do contexto de cada atividade.
-- Sem página de Liderança com fotos/nomes — explicado em "Como funciona" e "Informações para pais".
-- Link **"Não é da região?"** apontando para o localizador oficial de clubes.
-- Home: hero permanente + bloco de aviso/destaque de evento que só aparece quando há evento (não substitui o hero).
-- Categorias de Atividades: Aventura, Aprendizado, Serviço, Liderança, Convivência.
+A página Participe funciona como etapa final do percurso do visitante:
+
+**Descobrir → entender → conhecer as atividades → consultar a agenda → participar**
 
 ---
 
-## 3. Integrações planejadas
+## 3. Página Participe
 
-| Integração | Decisão | Observação |
+> **Nota de implementação (revisão técnica):** a primeira versão desta
+> página usava classes (`.button`, `.container`) e variáveis CSS
+> (`--raw-off-white`, `--raw-fundo-claro`, `--raw-fundo-alternativo`) que
+> não existiam em nenhum outro arquivo do projeto — nada nela era
+> estilizado corretamente, e o link do CSS apontava para o caminho errado
+> (`css/layout.css` em vez de `css/components/layout.css`). A página foi
+> **reescrita do zero** mantendo a mesma estrutura de conteúdo descrita
+> abaixo, mas usando exatamente as classes e tokens já em uso em
+> Home/Sobre/Atividades/Agenda (`.btn`, `.section`, `.section--alt`,
+> `.page-header`, `.eyebrow`, variáveis `--color-*`/`--category-*`).
+
+### Objetivo
+
+Reduzir a barreira de entrada para quem quer conhecer o clube e, ao mesmo tempo, fornecer aos pais informações básicas para entender a organização.
+
+A página não deve começar como um formulário burocrático. Primeiro apresenta a experiência e explica como funciona; depois conduz ao contato/interesse.
+
+### Estrutura atual
+
+1. **Hero**
+   - Pergunta principal: “Quer conhecer o Estrela de Aço?”
+   - CTA principal: “Quero conhecer”
+   - CTA secundário: “Ver agenda”
+   - `[IMAGEM DE FUNDO NECESSÁRIA]`
+   - Arquivo previsto: `assets/images/hero/hero-participe.jpg`
+
+2. **Primeiro passo**
+   - Explica que o visitante não precisa saber tudo antes de chegar.
+   - Linguagem simples e acolhedora.
+
+3. **Para quem é**
+   - Crianças
+   - Adolescentes
+   - Famílias
+   - Não apresentar como três “produtos”; são públicos com necessidades diferentes.
+
+4. **Como funciona**
+   - Unidades
+   - Cargos e responsabilidades
+   - Reuniões e atividades
+   - Não foram inventados horários ou procedimentos específicos.
+
+5. **Informações para pais**
+   - Rotina
+   - Organização
+   - Perguntas frequentes
+   - `[IMAGEM DE APOIO NECESSÁRIA]`
+   - Arquivo previsto: `assets/images/experiences/participacao-familia.jpg`
+
+6. **Quero conhecer**
+   - Área preparada para futura integração de formulário.
+   - `[FORMULÁRIO DE INTERESSE]`
+   - `[INTEGRAÇÃO DE FORMULÁRIO NECESSÁRIA]`
+   - A integração real será feita posteriormente.
+
+7. **Não é da região?**
+   - Encaminhamento para o localizador oficial de clubes.
+   - Não criar uma página própria para outros clubes.
+
+8. **CTA final**
+   - Retorno para a Agenda.
+
+---
+
+## 4. Assets pendentes da página Participe
+
+Os arquivos ainda não foram inventados nem substituídos por imagens genéricas.
+
+### Imagens
+
+- `assets/images/hero/hero-participe.jpg`
+  - Uso: fundo do hero.
+  - Tipo: fotografia real.
+  - Direção visual: família/participação/atividade ao ar livre, com espaço visual para texto.
+
+- `assets/images/experiences/participacao-familia.jpg`
+  - Uso: apoio da seção para pais.
+  - Tipo: fotografia real.
+  - Direção visual: participação familiar e ambiente do clube.
+
+### Ícones
+
+- Ícone de grupo
+- Ícone de organização
+- Ícone de calendário
+- Ícone de formulário
+- Ícone de localização
+- Ícone de contato
+- Ícone de rede social
+
+Por enquanto os locais estão marcados explicitamente no HTML com `[ÍCONE ...]`.
+
+### Logo
+
+- `assets/images/logo/logo-header.png`
+- Uso: header e footer.
+- O arquivo real deve substituir o marcador `[LOGO DO CLUBE]`.
+
+---
+
+## 5. Conteúdo factual pendente
+
+Não preencher com informação inventada.
+
+Ainda precisam ser definidos pelo clube:
+
+- horários oficiais das reuniões;
+- endereço/local exato dos encontros;
+- canais oficiais de contato;
+- redes sociais;
+- procedimento real de inscrição/interesse;
+- funcionamento definitivo do formulário;
+- detalhes específicos da rotina para pais;
+- textos reais da história do clube.
+
+Enquanto esses dados não forem fornecidos, a interface deve indicar claramente o espaço reservado.
+
+---
+
+## 6. Paleta v2
+
+### Identidade
+
+- Verde Petróleo: `#0F4C46`
+- Azul Profundo: `#0D3B66`
+- Grafite: `#1E1E1E`
+- Off-white: `#F4F3EF`
+
+### Acentos
+
+- Dourado: `#C89B3C`
+- Amarelo: `#F4C430`
+- Vermelho: `#B83A32`
+
+### Secundárias
+
+- Cinza Texto: `#5E686F`
+- Verde Natural: `#2E7D32`
+- Azul Céu: `#5B8DB8`
+
+### Fundos
+
+- Fundo claro: `#F4F3EF`
+- Fundo alternativo: `#F0F0EC`
+- Fundo escuro: `#0E1F24`
+- Fundo textura: `#1A2A2F`
+
+---
+
+## 7. Tipografia
+
+- **Títulos:** Big Shoulders Display
+- **Texto:** Work Sans
+
+Os títulos devem ter presença visual sem transformar o site em uma interface infantil ou temática demais.
+
+---
+
+## 8. Regras de design
+
+- Jovem sem ser infantil.
+- Aventureiro sem parecer radical.
+- Espiritual sem parecer exclusivamente institucional.
+- Profissional sem parecer corporativo.
+- Fotografia real sempre que possível.
+- Não usar excesso de gradientes, sombras ou efeitos 3D.
+- Cores de categoria devem identificar, não dominar.
+- Animações devem ser discretas e ter propósito.
+- Nenhuma informação factual deve ser inventada apenas para preencher a interface.
+- Quando um asset ainda não existir, marcar explicitamente seu lugar.
+
+---
+
+## 9. Convenção de placeholders
+
+Durante o desenvolvimento, usar marcadores claros:
+
+- `[IMAGEM DE FUNDO NECESSÁRIA]`
+- `[IMAGEM DE APOIO NECESSÁRIA]`
+- `[ÍCONE NECESSÁRIO]`
+- `[LOGO DO CLUBE]`
+- `[FORMULÁRIO DE INTERESSE]`
+- `[INTEGRAÇÃO ... NECESSÁRIA]`
+- `[INFORMAÇÃO NECESSÁRIA]`
+
+Isso permite desenvolver o layout sem fingir que um asset ou informação já existe.
+
+---
+
+## 10. Agenda
+
+A página Agenda foi criada antes de Participe.
+
+Decisões mantidas:
+
+- interface própria do Estrela de Aço;
+- calendário preparado para futura integração com Google Calendar público;
+- sem iframe como solução visual final;
+- detalhes de eventos serão adicionados quando houver dados reais.
+
+### Duas taxonomias diferentes (decisão resolvida)
+
+A Agenda **não** usa as mesmas "categorias de atividade" da página
+Atividades. São dois sistemas com propósitos diferentes, e os dois
+continuam existindo:
+
+| Sistema | Onde aparece | Valores |
 |---|---|---|
-| Agenda | Google Calendar público como fonte + interface própria do site | Sem iframe. Estrutura pronta para migrar para API no futuro. |
-| Formulários | Solução própria | Google Forms descartado — não permite personalização visual. |
-| Mapas | A definir | Pasta reservada em `integrations/maps/`. |
-| WhatsApp | A definir | Pasta reservada em `integrations/whatsapp/`. |
-| Redes sociais | A definir | Pasta reservada em `integrations/social/`. |
+| Categoria de atividade | Página Atividades, `.card__categoria` | Aventura, Aprendizado, Serviço, Liderança, Convivência |
+| Tipo de evento | Página Agenda, filtros e cards | Reunião, Programação, Ação social, Arrecadação, Evento especial |
+
+O tipo de evento vem da descrição do evento no Google Calendar, com a
+convenção `tipo: reuniao` (ou outro valor válido) em qualquer lugar do
+texto — ver `integrations/calendar/providers/public-calendar.js`.
+
+### Integração implementada
+
+- `js/pages/agenda.js` — renderiza o destaque e os cards, trata os
+  estados "agenda em breve" (`CalendarConfig.enabled = false`, estado
+  atual), "sem eventos" e "erro ao carregar", e ativa os filtros por
+  tipo de evento.
+- `integrations/calendar/calendar-config.js` — `enabled: false` até o
+  clube ter um `calendarId` e `apiKey` reais. Não criar evento fictício
+  para "preencher" a tela.
+- `integrations/calendar/providers/public-calendar.js` — busca na API
+  do Google Calendar e converte para o formato interno.
+- `integrations/calendar/calendar-service.js` — camada entre a página e
+  o provider (permite trocar de provider no futuro sem tocar em
+  `agenda.js`).
+- `pages/agenda.html` precisou de um ajuste: faltavam as tags
+  `<script>` desses quatro arquivos antes do fechamento do `</body>`.
 
 ---
 
-## 4. Paleta de cores — v2 (vigente)
+## 11. Sobre
 
-A paleta é um **sistema com função**, não uma lista de cores usadas por igual.
-Arquivo fonte: `css/base/variables.css`.
+A página Sobre já possui estrutura própria.
 
-### 4.1 Identidade
+Conteúdo pendente:
 
-| Cor | Hex | Função |
+- história real do clube;
+- informações institucionais que ainda precisem ser confirmadas.
+
+Não substituir informações faltantes por texto fictício.
+
+---
+
+## 12. Atividades
+
+A página Atividades segue os cinco eixos:
+
+- Aventura
+- Aprendizado
+- Serviço
+- Liderança
+- Convivência
+
+A seção Aventura deve ter maior impacto visual, mas as categorias não devem virar cinco cards corporativos idênticos.
+
+> **Correção aplicada (revisão técnica):** o rótulo de categoria
+> (`.atividade-card__categoria` / `.atividade-destaque__categoria`) não
+> usa mais `--categoria-cor` como cor de texto. Dois motivos: essa
+> variável só existia dentro de `.atividade-card`, então nas seções de
+> destaque o texto simplesmente não recebia cor nenhuma; e a cor de
+> "Serviço" é o dourado, que reprova contraste WCAG como texto sobre
+> fundo claro (ver seção 6). A identidade de cada categoria continua
+> visível pela borda do card e pelo fundo da imagem de destaque — o
+> rótulo de texto agora usa sempre `--color-text-secondary`.
+
+---
+
+## 13. Estado do projeto
+
+### Concluído
+
+- Estrutura de pastas
+- Variáveis de design
+- Reset
+- Tipografia
+- Header
+- Footer
+- Botões
+- Cards
+- Layout global
+- Home
+- Navegação mobile
+- JavaScript base
+- Documentação inicial
+- Página Sobre
+- Página Atividades (revisada — ver seção 12)
+- Página Agenda (estrutura + integração funcional — ver seção 10)
+- Página Participe (reescrita — ver seção 3)
+- Revisão técnica completa das três páginas internas mais recentes (ver seção 14)
+
+### Pendente
+
+- Imagens reais da Home
+- Imagens reais da Sobre
+- História real do clube
+- Imagens reais da Agenda
+- Imagens reais da Participe
+- `calendarId` e `apiKey` reais do Google Calendar (hoje `enabled: false`)
+- Integração real do formulário (`integrations/forms/` ainda vazio)
+- Contato/localização/redes sociais
+- Revisão final de responsividade
+- Revisão final de acessibilidade
+- Revisão final de SEO
+- Revisão de performance
+- Escolha/configuração da hospedagem
+
+---
+
+## 14. Revisão técnica (arquivos reais do repositório)
+
+Depois de uma etapa de continuação feita em outra ferramenta, o
+repositório real foi conferido arquivo por arquivo (não só pela
+descrição do que deveria ter sido feito). Achados e correções:
+
+| Arquivo | Problema encontrado | Correção |
 |---|---|---|
-| 🟢 Verde Petróleo | `#0F4C46` | Cor de marca. Header, botões principais, elementos ativos. Também é a cor **oficial** da farda de Desbravadores (confirmado no Regulamento de Uniformes MDA 2020). |
-| 🔵 Azul Profundo | `#0D3B66` | Navegação, links, botões secundários. Usado também na página Sobre (o azul exclusivo `#123B5D` foi descontinuado). |
-| ⚫ Grafite | `#1E1E1E` | Títulos, texto principal, ícones. |
-| ◻️ Off-white | `#F4F3EF` | Único fundo claro base do site. |
+| `css/pages/atividades.css` | `--categoria-cor` não chegava até `.atividade-destaque` (fora do escopo); dourado usado como texto (`Serviço`) reprovava contraste | Rótulo de categoria passou a usar `--color-text-secondary` sempre |
+| `pages/participe.html` + `css/pages/participe.css` | Classes (`.button`, `.container`) e variáveis (`--raw-off-white`, `--raw-fundo-claro`, `--raw-fundo-alternativo`) inexistentes; caminho do CSS errado (404) | Página reescrita do zero com as classes e tokens já em uso no resto do site |
+| `pages/agenda.html` | Faltavam as tags `<script>` da integração e de `agenda.js` | Adicionadas as 4 tags, na ordem correta |
+| `js/pages/agenda.js` | Não existia | Criado, compatível com o DOM real de `agenda.html` |
+| `integrations/calendar/*.js` | Taxonomia de categoria não batia com os filtros reais do HTML | Ajustado para "tipo de evento" (ver seção 10) |
 
-### 4.2 Destaque
-
-| Cor | Hex | Função | Restrição |
-|---|---|---|---|
-| 🟡 Amarelo | `#F4C430` | Botão de destaque, hover/link ativo no header, item ativo | — |
-| 🟤 Dourado | `#C89B3C` | Detalhe institucional, borda, ícone especial, cor temática da Agenda | **Nunca como texto sobre fundo claro** (contraste 2.3:1 — reprova WCAG) |
-| 🔴 Vermelho | `#B83A32` | Alerta, erro, aviso importante | **Nunca como CTA comum** ("Participar" não é vermelho) |
-
-### 4.3 Apoio
-
-| Cor | Hex | Função | Restrição |
-|---|---|---|---|
-| Cinza texto | `#5E686F` | Texto secundário | Corrigido de `#68727A` (reprovava AA por pouco: 4.42 vs mínimo 4.5) |
-| Verde natural | `#2E7D32` | Ilustrações, elementos de natureza | Uso pontual, não substitui o verde petróleo |
-| Azul céu | `#5B8DB8` | Ícone/chip secundário | Contraste fraco (3.18) como texto/traço fino sobre fundo claro — usar como fundo de chip com texto escuro, ou ícone maior |
-
-### 4.4 Fundos
-
-| Cor | Hex | Função |
-|---|---|---|
-| Base | `#F4F3EF` | Fundo padrão de todas as seções |
-| Alternativo | `#F0F0EC` | Alterna com o base para separar seções sem usar borda |
-| Escuro | `#0E1F24` | Rodapé, CTA final, banners de impacto |
-| Textura | `#1A2A2F` | Overlay sobre fotografia, mapas, elementos de aventura |
-
-> **Removido na v2:** `#FAFAF8` (quase idêntico ao `#F4F3EF`, contraste 1.06 —
-> não separava nada visualmente) e `#123B5D` (azul exclusivo de Sobre,
-> redundante com o azul profundo principal).
-
-### 4.5 Categorias de atividades (reuso, não são cores novas)
-
-| Categoria | Cor |
-|---|---|
-| Aventura | Verde Petróleo `#0F4C46` |
-| Aprendizado | Azul Profundo `#0D3B66` |
-| Serviço | Dourado `#C89B3C` |
-| Liderança | Cinza texto `#5E686F` |
-| Convivência | Azul Céu `#5B8DB8` |
-
-Usar só em etiqueta, ícone ou linha de destaque — nunca pintar o card inteiro.
-
-### 4.6 Regras de aplicação por componente
-
-- **Header:** fundo verde petróleo, texto off-white, link ativo/hover amarelo.
-- **Botão principal:** fundo verde petróleo, texto off-white. ("Quero participar", "Inscrever-me")
-- **Botão secundário:** fundo azul profundo, texto off-white. ("Saiba mais", "Ver detalhes")
-- **Botão de destaque:** fundo amarelo, texto grafite. ("Ver agenda", "Próxima atividade")
-- **Botão de alerta:** fundo vermelho, texto off-white. Só para avisos reais.
-- **Cards:** fundo neutro (`#F0F0EC`), nunca pintados na cor da categoria — só uma faixa/etiqueta.
-- **Formulário:** campo com fundo `#F0F0EC`, foco em verde petróleo, erro em vermelho, sucesso em verde petróleo (não verde brilhante genérico).
-- **Rodapé/CTA final:** fundo escuro `#0E1F24`, texto off-white, detalhe dourado, botão verde petróleo.
+`css/components/modal.css`, `css/main.css`, `data/highlights.js` e
+`data/site-config.js` continuam vazios de propósito — nenhuma página
+os referencia ainda. Não preencher até terem uso real.
 
 ---
 
-## 4.7 Tipografia
+## 15. Regra para as próximas etapas
 
-| Papel | Fonte | Fonte (Google Fonts) |
-|---|---|---|
-| Títulos (h1–h4) | Big Shoulders Display | `Big Shoulders Display:wght@600;700;800` |
-| Texto corrido | Work Sans | `Work Sans:wght@400;500;600` |
+Cada nova alteração deve:
 
-**Por que essa dupla:** Big Shoulders Display é condensada e robusta — dialoga
-com o acabamento de "placa metálica" da logo sem imitar o efeito 3D dela.
-Work Sans é neutra e muito legível, para não competir com os títulos.
-Evita-se de propósito a combinação "serif editorial + fundo creme", que é a
-cara-padrão de site gerado por IA — nossa base é petróleo/off-white, não
-creme/terracota.
-
-Escala tipográfica fluida com `clamp()` em `typography.css` — cresce com a
-tela sem precisar de media query dedicada para cada tamanho de texto.
-
----
-
-## 5. Referências oficiais consultadas
-
-- **Regulamento de Uniformes DSA (espanhol, 56 pág.):** Pantones oficiais dos emblemas — 2758C, 1795C, 116C, 3425C, 104C. Não usados diretamente no site (são cores de bordado/tecido, não de tela).
-- **Regulamento de Uniformes MDA 2020 (português, 56 pág.):** confirma "verde petróleo" como nome oficial da cor da farda de Desbravadores. Não traz tabela de hex.
-- **Logo oficial:** estrela metálica de 5 pontas + emblema dos Desbravadores + placa "CLUBE DE DESBRAVADORES / ESTRELA DE AÇO / IPATINGA-MG AML / DESDE 2002". Não recolorir nem redesenhar.
-
-Referências visuais de inspiração (estrutura e fotografia, não identidade):
-`escoteiros.org.br`, `adventistas.org/pt/desbravadores`, `kisc.ch`.
-
----
-
-## 6. Estrutura de pastas (vigente, sem alterações)
-
-```text
-desbravadores-estrela-de-aco/
-├── index.html
-├── pages/
-├── css/
-│   ├── base/        (variables, reset, typography)
-│   ├── components/  (header, footer, buttons, cards, modal, forms)
-│   └── pages/
-├── js/
-│   ├── core/
-│   ├── components/
-│   └── pages/
-├── integrations/
-│   ├── calendar/
-│   ├── forms/
-│   ├── maps/
-│   ├── whatsapp/
-│   └── social/
-├── data/
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   ├── videos/
-│   └── fonts/
-├── docs/
-└── .gitignore
-```
-
-> Nota prática: pastas vazias não são versionadas pelo Git. Para as pastas
-> de `integrations/` sem arquivo ainda, adicionar um `.gitkeep` dentro de
-> cada uma evita que suma no próximo push (já aconteceu com `assets/`).
-
----
-
-## 7. Log de decisões
-
-| Data/etapa | Decisão |
-|---|---|
-| Estruturação inicial | Arquitetura de conteúdo, integrações e paleta v1 fechadas no ChatGPT |
-| Migração para Claude | Histórico completo analisado; paleta v1 revisada |
-| Revisão de paleta | Cortado `#123B5D` (Sobre) e `#FAFAF8` (fundo duplicado); corrigido `#68727A` → `#5E686F` para WCAG AA; documentada restrição de uso do dourado e do azul céu como texto |
-| Hospedagem | Definido que não será local; serviço ainda em escolha |
-| Início da implementação | Tipografia definida (Big Shoulders Display + Work Sans); `variables.css`, `reset.css`, `typography.css` e `index.html` (estrutura da Home) entregues |
-| Home completa (1ª versão) | Componentes CSS (header, buttons, cards, footer), `home.css`, menu mobile funcional (`navigation.js`) e `main.js` entregues; `docs/architecture.md` e `README.md` criados. Frase do hero trocada por decisão do usuário (foco em pertencimento/comunidade, não em "experiência" como produto) |
-
----
-
-## 8. Arquivos entregues e onde colocá-los
-
-| Arquivo entregue | Colocar em |
-|---|---|
-| `variables.css` | `css/base/variables.css` |
-| `reset.css` | `css/base/reset.css` |
-| `typography.css` | `css/base/typography.css` |
-| `header.css` | `css/components/header.css` |
-| `buttons.css` | `css/components/buttons.css` |
-| `cards.css` | `css/components/cards.css` |
-| `footer.css` | `css/components/footer.css` |
-| `home.css` | `css/pages/home.css` |
-| `layout.css` | `css/components/layout.css` |
-| `sobre.css` | `css/pages/sobre.css` |
-| `sobre.html` | `pages/sobre.html` |
-| `navigation.js` | `js/core/navigation.js` |
-| `main.js` | `js/core/main.js` |
-| `index.html` | raiz do projeto (`index.html`) |
-| `architecture.md` | `docs/architecture.md` |
-| `README.md` | raiz do projeto (`README.md`) |
-
-> **Atualização importante:** `.section`, `.section--alt`, `.on-dark`,
-> `.cta-final` e `.page-header` saíram de `home.css` e viraram um
-> componente compartilhado, `layout.css` — toda página interna (Sobre,
-> Atividades, Agenda, Participe) vai carregar esse arquivo. Se você já
-> tinha colocado o `home.css` antigo no projeto, substitua pela versão
-> nova (sem esses blocos) e adicione o `layout.css` junto no `<head>` do
-> `index.html`, logo antes do `home.css`.
-
-Com esses arquivos no lugar, a Home e a página Sobre já devem renderizar
-completas. Ainda faltam as imagens reais e o texto real da história do
-clube (marcado com `[INFORMAÇÃO NECESSÁRIA]` no `sobre.html` — não
-inventei história do clube, só deixei o espaço reservado).
-
-## 9. Próximos passos
-
-- [ ] Escolher serviço de hospedagem (pendente — atualizar esta seção quando decidido)
-- [x] `css/base/variables.css`
-- [x] `css/base/reset.css`
-- [x] `css/base/typography.css`
-- [x] `index.html` — estrutura semântica da Home
-- [x] `css/components/header.css`, `buttons.css`, `cards.css`, `footer.css`, `layout.css`
-- [x] `css/pages/home.css`
-- [x] `js/core/navigation.js` (menu mobile) e `js/core/main.js`
-- [x] `docs/architecture.md` e `README.md`
-- [x] `pages/sobre.html` + `css/pages/sobre.css`
-- [ ] Imagens reais da Home e da Sobre
-- [ ] Texto real da história do clube (Sobre)
-- [ ] Páginas internas restantes (Atividades, Agenda, Participe)
+1. preservar a arquitetura atual;
+2. reutilizar header, footer, layout e componentes existentes;
+3. respeitar a paleta v2;
+4. marcar assets inexistentes;
+5. não inventar dados do clube;
+6. alterar apenas os arquivos necessários;
+7. atualizar este documento quando uma decisão estrutural ou visual for tomada.

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda | Clube de Desbravadores Estrela de Aço</title>
+  <meta name="description" content="Confira a agenda do Clube de Desbravadores Estrela de Aço, em Ipatinga/MG, com reuniões, programações, ações sociais e eventos.">
+
+  <!-- Google Fonts: Big Shoulders Display (títulos) + Work Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/base/variables.css">
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/base/typography.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/layout.css">
+  <link rel="stylesheet" href="../css/pages/agenda.css">
+</head>
+
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="../index.html" class="site-header__logo">
+        <!--
+          [LOGO DO CLUBE]
+          Nome sugerido: logo-header.png
+          Local: assets/images/logo/
+          Uso: logo do Clube de Desbravadores Estrela de Aço no header.
+        -->
+        <img src="../assets/images/logo/logo-header.png" alt="Clube de Desbravadores Estrela de Aço">
+      </a>
+
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <button class="site-header__toggle" aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <span class="site-header__toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <ul class="site-header__menu" id="menu-principal">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="atividades.html">Atividades</a></li>
+          <li><a href="agenda.html" aria-current="page">Agenda</a></li>
+          <li><a href="participe.html" class="site-header__cta">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ==================== CABEÇALHO DA PÁGINA ==================== -->
+    <section class="page-header agenda-page-header on-dark">
+      <!--
+        [IMAGEM DE FUNDO NECESSÁRIA]
+        Nome sugerido: agenda-header.jpg
+        Local: assets/images/events/
+        Proporção: aproximadamente 16:5 ou mais larga
+        Uso: imagem de fundo do cabeçalho da página Agenda
+        Descrição visual: fotografia real de uma atividade do clube,
+        preferencialmente com espaço visual para leitura do texto.
+      -->
+      <div class="agenda-page-header__media" aria-hidden="true">
+        <div class="agenda-page-header__overlay"></div>
+      </div>
+
+      <div class="page-header__content">
+        <p class="eyebrow">AGENDA</p>
+        <h1>Veja o que está acontecendo</h1>
+        <p>
+          Reuniões, programações, ações sociais e eventos do Estrela de Aço.
+          Consulte as próximas atividades e veja como participar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== DESTAQUE ATUAL ==================== -->
+    <section class="section agenda-destaque">
+      <div class="agenda-destaque__inner">
+
+        <div class="agenda-destaque__conteudo">
+          <p class="eyebrow">Próxima atividade</p>
+
+          <!--
+            [DADOS DO EVENTO]
+            Este bloco será preenchido futuramente pelo sistema de agenda.
+            Por enquanto, mantenha os textos abaixo como estrutura visual.
+          -->
+          <h2>[Nome do evento em destaque]</h2>
+
+          <div class="agenda-evento__meta">
+            <p><strong>[Dia da semana], [dia] de [mês]</strong></p>
+            <p>[Horário] · [Local]</p>
+          </div>
+
+          <p>
+            [Descrição curta do evento. Explique o que acontecerá e, quando
+            necessário, informe se a atividade é aberta à comunidade.]
+          </p>
+
+          <a href="#proximas-atividades" class="btn btn--primary">Ver programação</a>
+        </div>
+
+        <div class="agenda-destaque__media">
+          <!--
+            [IMAGEM DO EVENTO NECESSÁRIA]
+            Nome sugerido: evento-destaque.jpg
+            Local: assets/images/events/
+            Proporção: 4:3 ou 16:10
+            Uso: fotografia do evento atualmente destacado na agenda
+            Descrição visual: foto real relacionada ao evento em destaque.
+          -->
+          <div class="agenda-image-placeholder">
+            <span>Imagem do evento em destaque</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PRÓXIMAS ATIVIDADES ==================== -->
+    <section class="section section--alt agenda-lista" id="proximas-atividades">
+      <div class="section-heading">
+        <p class="eyebrow">Próximas atividades</p>
+        <h2>O que vem por aí</h2>
+        <p>
+          A agenda abaixo será atualizada a partir do calendário público do clube.
+        </p>
+      </div>
+
+      <div class="agenda-filtros" aria-label="Filtrar atividades">
+        <button class="agenda-filtros__item is-active" type="button" data-filtro="todos">
+          Todas
+        </button>
+        <button class="agenda-filtros__item" type="button" data-filtro="reuniao">
+          Reuniões
+        </button>
+        <button class="agenda-filtros__item" type="button" data-filtro="programacao">
+          Programações
+        </button>
+        <button class="agenda-filtros__item" type="button" data-filtro="servico">
+          Ações sociais
+        </button>
+        <button class="agenda-filtros__item" type="button" data-filtro="arrecadacao">
+          Arrecadações
+        </button>
+        <button class="agenda-filtros__item" type="button" data-filtro="especial">
+          Eventos especiais
+        </button>
+      </div>
+
+      <!--
+        [LISTA DINÂMICA DE EVENTOS]
+        ID reservado para js/pages/agenda.js.
+        Fonte planejada: Google Calendar público.
+      -->
+      <div class="agenda-lista__grid" id="lista-agenda">
+        <article class="agenda-card" data-categoria="reuniao">
+          <div class="agenda-card__data">
+            <span>[MÊS]</span>
+            <strong>[00]</strong>
+          </div>
+          <div class="agenda-card__conteudo">
+            <span class="agenda-card__categoria">Reunião</span>
+            <h3>[Nome da reunião]</h3>
+            <p>[Horário] · [Local]</p>
+            <p>[Descrição curta da atividade]</p>
+            <a href="#" class="agenda-card__link">Ver detalhes</a>
+          </div>
+        </article>
+
+        <article class="agenda-card" data-categoria="programacao">
+          <div class="agenda-card__data">
+            <span>[MÊS]</span>
+            <strong>[00]</strong>
+          </div>
+          <div class="agenda-card__conteudo">
+            <span class="agenda-card__categoria">Programação</span>
+            <h3>[Nome da programação]</h3>
+            <p>[Horário] · [Local]</p>
+            <p>[Descrição curta da atividade]</p>
+            <a href="#" class="agenda-card__link">Ver detalhes</a>
+          </div>
+        </article>
+
+        <article class="agenda-card" data-categoria="servico">
+          <div class="agenda-card__data">
+            <span>[MÊS]</span>
+            <strong>[00]</strong>
+          </div>
+          <div class="agenda-card__conteudo">
+            <span class="agenda-card__categoria">Ação social</span>
+            <h3>[Nome da ação]</h3>
+            <p>[Horário] · [Local]</p>
+            <p>[Descrição curta da atividade]</p>
+            <a href="#" class="agenda-card__link">Ver detalhes</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="agenda-lista__status" id="agenda-status">
+        [CALENDÁRIO DINÂMICO — os eventos reais serão carregados posteriormente.]
+      </p>
+    </section>
+
+    <!-- ==================== CALENDÁRIO ==================== -->
+    <section class="section agenda-calendario">
+      <div class="agenda-calendario__conteudo">
+        <div class="section-heading">
+          <p class="eyebrow">Calendário</p>
+          <h2>Organize sua programação</h2>
+          <p>
+            Consulte os próximos compromissos do clube em uma visão de calendário.
+          </p>
+        </div>
+
+        <!--
+          [CALENDÁRIO DO GOOGLE NECESSÁRIO]
+          Não usar iframe.
+          A interface visual será própria do Estrela de Aço e os dados virão
+          do Google Calendar público através da integração planejada.
+        -->
+        <div class="agenda-calendario__placeholder">
+          <div class="agenda-calendario__placeholder-icon" aria-hidden="true">
+            [ÍCONE DE CALENDÁRIO]
+          </div>
+          <h3>Calendário do clube</h3>
+          <p>
+            Esta área receberá o calendário interativo conectado à agenda pública
+            do Estrela de Aço.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMO PARTICIPAR DE UMA ATIVIDADE ==================== -->
+    <section class="section section--alt agenda-participacao">
+      <div class="agenda-participacao__conteudo">
+        <p class="eyebrow">Quer conhecer?</p>
+        <h2>Você pode começar pela próxima atividade</h2>
+        <p>
+          Se você ainda não conhece o clube, veja as informações para participar
+          ou entre em contato antes de vir.
+        </p>
+        <a href="participe.html" class="btn btn--primary">Quero participar</a>
+      </div>
+
+      <div class="agenda-participacao__media">
+        <!--
+          [IMAGEM DE APOIO NECESSÁRIA]
+          Nome sugerido: agenda-participe.jpg
+          Local: assets/images/events/
+          Proporção: 4:3
+          Uso: fotografia de apoio ao CTA da Agenda
+          Descrição visual: momento de convivência ou atividade do clube.
+        -->
+        <div class="agenda-image-placeholder agenda-image-placeholder--small">
+          <span>Imagem de apoio</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer on-dark">
+    <div class="site-footer__inner">
+      <div class="site-footer__coluna">
+        <p><strong>Clube de Desbravadores Estrela de Aço</strong></p>
+        <p>Ipatinga/MG · Desde 2002</p>
+      </div>
+
+      <nav class="site-footer__coluna" aria-label="Links do rodapé">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="atividades.html">Atividades</a></li>
+          <li><a href="agenda.html">Agenda</a></li>
+          <li><a href="participe.html">Participe</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__coluna">
+        <!-- [PENDENTE] links de redes sociais — ver integrations/social/ -->
+        <p>
+          Não é da região?
+          <a href="https://www.adventistas.org/pt/desbravadores/encontre-um-clube/" target="_blank" rel="noopener">
+            Encontre um clube perto de você
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/core/navigation.js"></script>
+  <script src="../js/core/main.js"></script>
+
+  <!-- Integração de Agenda: config → provider → serviço → página, nessa ordem -->
+  <script src="../integrations/calendar/calendar-config.js"></script>
+  <script src="../integrations/calendar/providers/public-calendar.js"></script>
+  <script src="../integrations/calendar/calendar-service.js"></script>
+  <script src="../js/pages/agenda.js"></script>
+</body>
+</html>

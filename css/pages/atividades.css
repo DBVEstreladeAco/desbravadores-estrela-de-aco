@@ -1,0 +1,392 @@
+/*
+  Clube de Desbravadores Estrela de Aço
+  atividades.css — Página Atividades
+  Local no projeto: css/pages/atividades.css
+
+  Imagens desta página são intencionalmente placeholders.
+  Os locais e nomes sugeridos estão indicados no HTML.
+*/
+
+.atividades-header {
+  position: relative;
+  min-height: 28rem;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-surface-texture);
+}
+
+.atividades-header__placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-surface-texture),
+      var(--color-surface-dark)
+    );
+}
+
+.atividades-header__placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 31, 36, 0.96) 0%,
+      rgba(14, 31, 36, 0.76) 52%,
+      rgba(14, 31, 36, 0.48) 100%
+    );
+}
+
+.atividades-header__placeholder span {
+  position: relative;
+  z-index: 1;
+  padding: 0.65rem 0.9rem;
+  border: 1px dashed rgba(244, 243, 239, 0.55);
+  color: var(--color-text-on-dark);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.atividades-header__placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /*
+    [IMAGEM DE FUNDO]
+    Quando a foto real estiver disponível, adicionar:
+    background:
+      linear-gradient(...),
+      url("../../assets/images/activities/atividades-hero.jpg") center/cover no-repeat;
+  */
+}
+
+.atividades-header .page-header__content {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+  padding-block: 5rem 4rem;
+  color: var(--color-text-on-dark);
+}
+
+.atividades-header h1 {
+  margin-bottom: 1rem;
+}
+
+.atividades-header .page-header__content > p:last-child {
+  max-width: 42rem;
+  color: var(--color-text-on-dark);
+  font-size: 1.05rem;
+}
+
+.atividades-introducao {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.atividades-introducao__conteudo {
+  max-width: 46rem;
+}
+
+.atividades-introducao__conteudo h2 {
+  margin-bottom: 1rem;
+}
+
+.atividades-introducao__conteudo p:last-child {
+  color: var(--color-text-secondary);
+}
+
+.atividades-introducao__icone {
+  min-height: 10rem;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--color-border);
+  background: var(--color-background-alt);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.atividades-introducao__icone span {
+  padding: 0.6rem 0.8rem;
+  border: 1px dashed var(--color-primary);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.atividades-categorias .section-heading {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
+.atividades-categorias__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.atividade-card {
+  display: flex;
+  min-height: 15rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-top: 0.35rem solid var(--categoria-cor);
+  background: var(--color-background);
+  color: var(--color-text);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.atividade-card:hover {
+  transform: translateY(-0.2rem);
+  border-color: var(--categoria-cor);
+  box-shadow: 0 0.7rem 1.8rem rgba(14, 31, 36, 0.1);
+}
+
+.atividade-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.atividade-card__icone {
+  align-self: flex-start;
+  min-width: 9rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px dashed var(--categoria-cor);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/*
+  Correção: a categoria como cor de TEXTO não é usada aqui de propósito.
+  1) --categoria-cor só existe dentro de .atividade-card (não chega até as
+     seções .atividade-destaque, que ficam fora desse escopo).
+  2) A cor de "Serviço" é o dourado, que reprova contraste WCAG como texto
+     sobre fundo claro (ver docs/design-system.md, seção 4.2).
+  A identidade de cada categoria continua visível pela borda do card e pelo
+  fundo da imagem de destaque — não precisa duplicar na cor do texto.
+*/
+.atividade-card__categoria,
+.atividade-destaque__categoria {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.atividade-card h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.atividade-card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.atividade-card--aventura {
+  --categoria-cor: var(--category-aventura);
+}
+
+.atividade-card--aprendizado {
+  --categoria-cor: var(--category-aprendizado);
+}
+
+.atividade-card--servico {
+  --categoria-cor: var(--category-servico);
+}
+
+.atividade-card--lideranca {
+  --categoria-cor: var(--category-lideranca);
+}
+
+.atividade-card--convivencia {
+  --categoria-cor: var(--category-convivencia);
+}
+
+.atividade-destaque {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.atividade-destaque__media {
+  min-height: 20rem;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--color-surface-texture);
+  color: var(--color-text-on-dark);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.atividade-destaque__media span {
+  padding: 0.6rem 0.8rem;
+  border: 1px dashed rgba(244, 243, 239, 0.6);
+  background: rgba(14, 31, 36, 0.5);
+  font-size: 0.8rem;
+}
+
+.atividade-destaque__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /*
+    [IMAGEM NECESSÁRIA]
+    A foto real deve ser aplicada como background-image nesta camada.
+    Exemplos:
+    aventura-01.jpg
+    aprendizado-01.jpg
+    servico-01.jpg
+    lideranca-01.jpg
+    convivencia-01.jpg
+  */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.atividade-destaque__media--aventura {
+  background-color: var(--category-aventura);
+}
+
+.atividade-destaque__media--aprendizado {
+  background-color: var(--category-aprendizado);
+}
+
+.atividade-destaque__media--servico {
+  background-color: var(--category-servico);
+}
+
+.atividade-destaque__media--lideranca {
+  background-color: var(--category-lideranca);
+}
+
+.atividade-destaque__media--convivencia {
+  background-color: var(--category-convivencia);
+}
+
+.atividade-destaque__conteudo {
+  max-width: 42rem;
+}
+
+.atividade-destaque__conteudo h2 {
+  margin-block: 0.6rem 1rem;
+}
+
+.atividade-destaque__conteudo p {
+  color: var(--color-text-secondary);
+}
+
+.atividade-destaque__conteudo a:not(.btn) {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.atividade-destaque__conteudo a:not(.btn):hover {
+  color: var(--color-primary);
+}
+
+.atividades-cta {
+  text-align: center;
+}
+
+.atividades-cta .eyebrow {
+  color: var(--color-accent);
+}
+
+.atividades-cta p:not(.eyebrow) {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 40rem) {
+  .atividades-header {
+    min-height: 32rem;
+  }
+
+  .atividades-header .page-header__content {
+    padding-block: 7rem 5rem;
+  }
+
+  .atividades-introducao {
+    grid-template-columns: minmax(0, 1fr) 16rem;
+  }
+
+  .atividades-categorias__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atividade-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .atividade-destaque {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .atividade-destaque__media {
+    min-height: 26rem;
+  }
+
+  .atividade-destaque--invertido .atividade-destaque__media {
+    order: 2;
+  }
+
+  .atividade-destaque--invertido .atividade-destaque__conteudo {
+    order: 1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .atividades-categorias__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .atividade-card:last-child {
+    grid-column: auto;
+  }
+
+  .atividade-card {
+    min-height: 17rem;
+  }
+
+  .atividade-destaque {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+  }
+
+  .atividade-destaque__media {
+    min-height: 30rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atividade-card {
+    transition: none;
+  }
+
+  .atividade-card:hover {
+    transform: none;
+  }
+}

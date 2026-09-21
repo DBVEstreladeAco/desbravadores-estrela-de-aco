@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Clube de Desbravadores Estrela de Aço — Ipatinga/MG
+   agenda.css — Página Agenda
+   Local no projeto: css/pages/agenda.css
+   ========================================================================== */
+
+/* ==================== CABEÇALHO ==================== */
+
+.agenda-page-header {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.agenda-page-header__media {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(14, 31, 36, 0.92) 0%,
+      rgba(14, 31, 36, 0.70) 55%,
+      rgba(14, 31, 36, 0.45) 100%
+    );
+  background-color: var(--color-surface-texture);
+  background-size: cover;
+  background-position: center;
+}
+
+.agenda-page-header__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.agenda-page-header__media::before {
+  content: "[IMAGEM DE FUNDO: agenda-header.jpg]";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: rgba(244, 243, 239, 0.45);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.page-header__content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  padding: 4rem 0 3.5rem;
+}
+
+.page-header__content h1 {
+  max-width: 760px;
+  margin-bottom: 1rem;
+}
+
+.page-header__content p:last-child {
+  max-width: 680px;
+  margin: 0;
+}
+
+
+/* ==================== DESTAQUE ==================== */
+
+.agenda-destaque {
+  background: var(--color-background);
+}
+
+.agenda-destaque__inner {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.agenda-destaque__conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.agenda-destaque__conteudo h2 {
+  margin-bottom: 1rem;
+}
+
+.agenda-destaque__conteudo > p:not(.eyebrow) {
+  max-width: 620px;
+}
+
+.agenda-evento__meta {
+  margin: 0 0 1.25rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-agenda-accent);
+}
+
+.agenda-evento__meta p {
+  margin: 0.25rem 0;
+}
+
+.agenda-destaque__media {
+  min-height: 300px;
+}
+
+.agenda-image-placeholder {
+  min-height: 300px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-surface-texture),
+      var(--color-surface-dark)
+    );
+  border-radius: 0.75rem;
+  color: var(--color-text-on-dark);
+  text-align: center;
+  overflow: hidden;
+}
+
+.agenda-image-placeholder span {
+  max-width: 240px;
+  padding: 0.75rem 1rem;
+  border: 1px dashed rgba(244, 243, 239, 0.45);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+
+/* ==================== LISTA E FILTROS ==================== */
+
+.agenda-lista .section-heading {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.agenda-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.agenda-filtros__item {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.agenda-filtros__item:hover,
+.agenda-filtros__item:focus-visible {
+  border-color: var(--color-border-active);
+}
+
+.agenda-filtros__item.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.agenda-lista__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.agenda-card {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.agenda-card__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 84px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  text-align: center;
+}
+
+.agenda-card__data span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.agenda-card__data strong {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  line-height: 0.95;
+}
+
+.agenda-card__categoria {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.agenda-card__conteudo h3 {
+  margin-bottom: 0.4rem;
+}
+
+.agenda-card__conteudo p {
+  margin: 0.35rem 0;
+}
+
+.agenda-card__link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.agenda-card__link:hover,
+.agenda-card__link:focus-visible {
+  color: var(--color-primary);
+}
+
+.agenda-lista__status {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+
+/* ==================== CALENDÁRIO ==================== */
+
+.agenda-calendario__conteudo {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+}
+
+.agenda-calendario__placeholder {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-background-alt);
+  text-align: center;
+}
+
+.agenda-calendario__placeholder h3,
+.agenda-calendario__placeholder p {
+  margin: 0;
+}
+
+.agenda-calendario__placeholder p {
+  max-width: 560px;
+  color: var(--color-text-secondary);
+}
+
+.agenda-calendario__placeholder-icon {
+  display: grid;
+  place-items: center;
+  min-width: 120px;
+  min-height: 56px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+/* ==================== CTA ==================== */
+
+.agenda-participacao {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.agenda-participacao__conteudo {
+  max-width: 680px;
+}
+
+.agenda-participacao__media {
+  min-height: 260px;
+}
+
+.agenda-image-placeholder--small {
+  min-height: 260px;
+}
+
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+@media (min-width: 768px) {
+  .agenda-page-header {
+    min-height: 500px;
+  }
+
+  .page-header__content {
+    padding-bottom: 5rem;
+  }
+
+  .agenda-destaque__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 4rem;
+  }
+
+  .agenda-lista__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .agenda-card {
+    padding: 1.25rem;
+  }
+
+  .agenda-participacao {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .agenda-page-header {
+    min-height: 540px;
+  }
+
+  .agenda-lista__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .agenda-card {
+    grid-template-columns: 72px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agenda-filtros__item {
+    transition: none;
+  }
+}
