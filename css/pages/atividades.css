@@ -3,9 +3,13 @@
   atividades.css — Página Atividades
   Local no projeto: css/pages/atividades.css
 
-  Imagens desta página são intencionalmente placeholders.
-  Os locais e nomes sugeridos estão indicados no HTML.
+  Imagens: cada foto é aplicada via background-image (caminho relativo a
+  este arquivo: ../../assets/images/activities/). Enquanto o arquivo da foto
+  não existir, o placeholder (cor + texto tracejado) continua visível.
+  Quando a foto real for adicionada, remova o <span> de placeholder do HTML.
 */
+
+/* ==================== CABEÇALHO ==================== */
 
 .atividades-header {
   position: relative;
@@ -15,6 +19,7 @@
   overflow: hidden;
   isolation: isolate;
   background: var(--color-surface-texture);
+  padding: 0; /* anula o padding do .page-header (layout.css), evita espaço duplicado */
 }
 
 .atividades-header__placeholder {
@@ -32,6 +37,7 @@
     );
 }
 
+/* Camada de escurecimento (degradê) por cima da foto */
 .atividades-header__placeholder::before {
   content: "";
   position: absolute;
@@ -55,18 +61,16 @@
   text-align: center;
 }
 
+/* Foto real de fundo do cabeçalho (fica abaixo do degradê) */
 .atividades-header__placeholder::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  /*
-    [IMAGEM DE FUNDO]
-    Quando a foto real estiver disponível, adicionar:
-    background:
-      linear-gradient(...),
-      url("../../assets/images/activities/atividades-hero.jpg") center/cover no-repeat;
-  */
+  background-image: url("../../assets/images/activities/atividades-hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .atividades-header .page-header__content {
@@ -74,6 +78,14 @@
   margin-inline: auto;
   padding-block: 5rem 4rem;
   color: var(--color-text-on-dark);
+}
+
+/* Eyebrow do cabeçalho: amarelo de destaque, com alto contraste sobre o degradê escuro */
+.atividades-header .eyebrow {
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .atividades-header h1 {
@@ -85,6 +97,9 @@
   color: var(--color-text-on-dark);
   font-size: 1.05rem;
 }
+
+
+/* ==================== INTRODUÇÃO ==================== */
 
 .atividades-introducao {
   display: grid;
@@ -121,6 +136,9 @@
   font-size: 0.85rem;
   font-weight: 600;
 }
+
+
+/* ==================== CARDS DE CATEGORIA ==================== */
 
 .atividades-categorias .section-heading {
   max-width: 48rem;
@@ -171,13 +189,13 @@
 }
 
 /*
-  Correção: a categoria como cor de TEXTO não é usada aqui de propósito.
+  A categoria como cor de TEXTO não é usada aqui de propósito.
   1) --categoria-cor só existe dentro de .atividade-card (não chega até as
      seções .atividade-destaque, que ficam fora desse escopo).
   2) A cor de "Serviço" é o dourado, que reprova contraste WCAG como texto
-     sobre fundo claro (ver docs/design-system.md, seção 4.2).
+     sobre fundo claro (ver docs/design-system.md).
   A identidade de cada categoria continua visível pela borda do card e pelo
-  fundo da imagem de destaque — não precisa duplicar na cor do texto.
+  fundo da imagem de destaque.
 */
 .atividade-card__categoria,
 .atividade-destaque__categoria {
@@ -218,70 +236,99 @@
   --categoria-cor: var(--category-convivencia);
 }
 
+
+/* ==================== SEÇÕES DE DESTAQUE (IMAGEM + TEXTO) ==================== */
+
 .atividade-destaque {
   display: grid;
   gap: 2rem;
   align-items: center;
 }
 
+/*
+  CORREÇÃO DE ALINHAMENTO
+  .section--alt remove o max-width (para o fundo ocupar a tela toda). Como
+  estas seções são grid, o grid esticava até a borda da tela e a imagem/texto
+  saíam desalinhados das seções sem --alt. Aqui o conteúdo é recentralizado
+  na mesma largura de 1200px das outras seções.
+*/
+.section--alt.atividade-destaque {
+  padding-inline: max(1.25rem, calc((100% - 1200px) / 2 + 1.25rem));
+}
+
+.section--alt.atividade-destaque > * {
+  max-width: none;
+  margin-inline: 0;
+}
+
 .atividade-destaque__media {
+  position: relative;
   min-height: 20rem;
   display: grid;
   place-items: center;
   padding: 1.5rem;
-  background: var(--color-surface-texture);
+  background-color: var(--color-surface-texture);
   color: var(--color-text-on-dark);
   text-align: center;
   overflow: hidden;
-  position: relative;
+  isolation: isolate;
 }
 
+/* Texto de placeholder — remover do HTML quando a foto real existir */
 .atividade-destaque__media span {
+  position: relative;
+  z-index: 1;
   padding: 0.6rem 0.8rem;
   border: 1px dashed rgba(244, 243, 239, 0.6);
   background: rgba(14, 31, 36, 0.5);
   font-size: 0.8rem;
 }
 
+/* Camada da foto real: opacidade total, fica atrás do placeholder */
 .atividade-destaque__media::after {
   content: "";
   position: absolute;
   inset: 0;
-  /*
-    [IMAGEM NECESSÁRIA]
-    A foto real deve ser aplicada como background-image nesta camada.
-    Exemplos:
-    aventura-01.jpg
-    aprendizado-01.jpg
-    servico-01.jpg
-    lideranca-01.jpg
-    convivencia-01.jpg
-  */
+  z-index: 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.16;
   pointer-events: none;
 }
 
 .atividade-destaque__media--aventura {
   background-color: var(--category-aventura);
 }
+.atividade-destaque__media--aventura::after {
+  background-image: url("../../assets/images/activities/aventura-01.jpg");
+}
 
 .atividade-destaque__media--aprendizado {
   background-color: var(--category-aprendizado);
+}
+.atividade-destaque__media--aprendizado::after {
+  background-image: url("../../assets/images/activities/aprendizado-01.jpg");
 }
 
 .atividade-destaque__media--servico {
   background-color: var(--category-servico);
 }
+.atividade-destaque__media--servico::after {
+  background-image: url("../../assets/images/activities/servico-01.jpg");
+}
 
 .atividade-destaque__media--lideranca {
   background-color: var(--category-lideranca);
 }
+.atividade-destaque__media--lideranca::after {
+  background-image: url("../../assets/images/activities/lideranca-01.jpg");
+}
 
 .atividade-destaque__media--convivencia {
   background-color: var(--category-convivencia);
+}
+.atividade-destaque__media--convivencia::after {
+  background-image: url("../../assets/images/activities/convivencia-01.jpg");
 }
 
 .atividade-destaque__conteudo {
@@ -307,6 +354,9 @@
   color: var(--color-primary);
 }
 
+
+/* ==================== CTA FINAL ==================== */
+
 .atividades-cta {
   text-align: center;
 }
@@ -319,6 +369,9 @@
   max-width: 42rem;
   margin-inline: auto;
 }
+
+
+/* ==================== RESPONSIVIDADE ==================== */
 
 @media (min-width: 40rem) {
   .atividades-header {
