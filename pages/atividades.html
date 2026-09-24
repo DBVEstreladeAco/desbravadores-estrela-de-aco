@@ -18,6 +18,18 @@
   <link rel="stylesheet" href="../css/components/footer.css">
   <link rel="stylesheet" href="../css/components/layout.css">
   <link rel="stylesheet" href="../css/pages/atividades.css">
+
+  <style>
+    /* Ajustes finos de visual da página */
+    .atividades-header__placeholder::before {
+      background: linear-gradient(
+        90deg,
+        rgba(14, 31, 36, 0.75) 0%,
+        rgba(14, 31, 36, 0.45) 50%,
+        rgba(14, 31, 36, 0.15) 100%
+      ) !important;
+    }
+  </style>
 </head>
 <body>
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
@@ -25,14 +37,6 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a href="../index.html" class="site-header__logo">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: logo-header.png
-          Local: assets/images/logo/
-          Uso: logo do clube dentro do header.
-          Descrição: versão da logo Estrela de Aço adequada para uso pequeno sobre
-          fundo verde petróleo.
-        -->
         <img src="../assets/images/logo/logo-header.png" alt="Clube de Desbravadores Estrela de Aço">
       </a>
 
@@ -55,22 +59,15 @@
 
   <main id="conteudo-principal">
     <section class="page-header atividades-header">
-      <!--
-        [IMAGEM DE FUNDO NECESSÁRIA]
-        Nome sugerido: atividades-hero.jpg
-        Local: assets/images/activities/
-        Proporção: 16:9 ou mais larga, alta resolução.
-        Uso: imagem de fundo do cabeçalho da página Atividades.
-        Descrição: fotografia real do Estrela de Aço em uma atividade ao ar livre,
-        com espaço visual para leitura do título.
-      -->
-      <div class="atividades-header__placeholder" aria-hidden="true">
-        <span>Imagem de fundo: atividades-hero.jpg</span>
-      </div>
+      <div 
+        class="atividades-header__placeholder" 
+        aria-hidden="true"
+        style="background-image: url('../assets/images/activities/atividades-hero.jpg'); background-size: cover; background-position: center;"
+      ></div>
 
       <div class="page-header__content">
         <p class="eyebrow">Viva, aprenda e participe</p>
-        <h1>Atividades</h1>
+        <h1 style="color: #ffffff;">Atividades</h1>
         <p>
           No Estrela de Aço, aprender acontece fazendo. As atividades combinam
           aventura, habilidades práticas, serviço, responsabilidade e convivência.
@@ -91,13 +88,6 @@
       </div>
 
       <div class="atividades-introducao__icone" aria-hidden="true">
-        <!--
-          [ÍCONE NECESSÁRIO]
-          Tipo: ícone de bússola/trilha/exploração.
-          Local sugerido: assets/icons/
-          Uso: apoio visual da introdução da página Atividades.
-          Estilo: desenho simples, traço escuro, compatível com a identidade visual.
-        -->
         <span>Ícone de exploração</span>
       </div>
     </section>
@@ -111,7 +101,6 @@
       <div class="atividades-categorias__grid">
         <a class="atividade-card atividade-card--aventura" href="#aventura">
           <span class="atividade-card__icone" aria-hidden="true">
-            <!-- [ÍCONE NECESSÁRIO] Ícone de montanha/trilha — assets/icons/icon-aventura.svg -->
             Ícone de aventura
           </span>
           <span class="atividade-card__categoria">Aventura</span>
@@ -121,7 +110,6 @@
 
         <a class="atividade-card atividade-card--aprendizado" href="#aprendizado">
           <span class="atividade-card__icone" aria-hidden="true">
-            <!-- [ÍCONE NECESSÁRIO] Ícone de aprendizado/habilidade — assets/icons/icon-aprendizado.svg -->
             Ícone de aprendizado
           </span>
           <span class="atividade-card__categoria">Aprendizado</span>
@@ -131,7 +119,6 @@
 
         <a class="atividade-card atividade-card--servico" href="#servico">
           <span class="atividade-card__icone" aria-hidden="true">
-            <!-- [ÍCONE NECESSÁRIO] Ícone de mãos/serviço — assets/icons/icon-servico.svg -->
             Ícone de serviço
           </span>
           <span class="atividade-card__categoria">Serviço</span>
@@ -141,7 +128,6 @@
 
         <a class="atividade-card atividade-card--lideranca" href="#lideranca">
           <span class="atividade-card__icone" aria-hidden="true">
-            <!-- [ÍCONE NECESSÁRIO] Ícone de liderança/equipe — assets/icons/icon-lideranca.svg -->
             Ícone de liderança
           </span>
           <span class="atividade-card__categoria">Liderança</span>
@@ -151,7 +137,6 @@
 
         <a class="atividade-card atividade-card--convivencia" href="#convivencia">
           <span class="atividade-card__icone" aria-hidden="true">
-            <!-- [ÍCONE NECESSÁRIO] Ícone de pessoas/amizade — assets/icons/icon-convivencia.svg -->
             Ícone de convivência
           </span>
           <span class="atividade-card__categoria">Convivência</span>
@@ -162,17 +147,12 @@
     </section>
 
     <section class="section atividade-destaque" id="aventura">
-      <div class="atividade-destaque__media atividade-destaque__media--aventura">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: aventura-01.jpg
-          Local: assets/images/activities/
-          Proporção: 4:3 ou 3:2.
-          Uso: fotografia principal da categoria Aventura.
-          Descrição: atividade real do clube ao ar livre, preferencialmente com
-          trilha, acampamento, natureza ou desafio em equipe.
-        -->
-        <span>Imagem: aventura-01.jpg</span>
+      <div class="atividade-destaque__media atividade-destaque__media--aventura" style="padding: 0; border: none;">
+        <img 
+          src="../assets/images/activities/aventura-01.jpg" 
+          alt="atividade real do clube ao ar livre, preferencialmente com trilha, acampamento, natureza ou desafio em equipe."
+          style="width: 100%; height: 100%; object-fit: cover; display: block; border: none;"
+        >
       </div>
 
       <div class="atividade-destaque__conteudo">
@@ -192,16 +172,12 @@
     </section>
 
     <section class="section section--alt atividade-destaque atividade-destaque--invertido" id="aprendizado">
-      <div class="atividade-destaque__media atividade-destaque__media--aprendizado">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: aprendizado-01.jpg
-          Local: assets/images/activities/
-          Proporção: 4:3 ou 3:2.
-          Uso: fotografia principal da categoria Aprendizado.
-          Descrição: desbravadores aprendendo ou praticando uma habilidade.
-        -->
-        <span>Imagem: aprendizado-01.jpg</span>
+      <div class="atividade-destaque__media atividade-destaque__media--aprendizado" style="padding: 0; border: none;">
+        <img 
+          src="../assets/images/activities/aprendizado-01.jpg" 
+          alt="desbravadores aprendendo ou praticando uma habilidade."
+          style="width: 100%; height: 100%; object-fit: cover; display: block; border: none;"
+        >
       </div>
 
       <div class="atividade-destaque__conteudo">
@@ -219,16 +195,12 @@
     </section>
 
     <section class="section atividade-destaque" id="servico">
-      <div class="atividade-destaque__media atividade-destaque__media--servico">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: servico-01.jpg
-          Local: assets/images/activities/
-          Proporção: 4:3 ou 3:2.
-          Uso: fotografia principal da categoria Serviço.
-          Descrição: ação social, arrecadação, campanha ou atividade comunitária real.
-        -->
-        <span>Imagem: servico-01.jpg</span>
+      <div class="atividade-destaque__media atividade-destaque__media--servico" style="padding: 0; border: none;">
+        <img 
+          src="../assets/images/activities/servico-01.jpg" 
+          alt="ação social, arrecadação, campanha ou atividade comunitária real."
+          style="width: 100%; height: 100%; object-fit: cover; display: block; border: none;"
+        >
       </div>
 
       <div class="atividade-destaque__conteudo">
@@ -243,16 +215,12 @@
     </section>
 
     <section class="section section--alt atividade-destaque atividade-destaque--invertido" id="lideranca">
-      <div class="atividade-destaque__media atividade-destaque__media--lideranca">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: lideranca-01.jpg
-          Local: assets/images/activities/
-          Proporção: 4:3 ou 3:2.
-          Uso: fotografia principal da categoria Liderança.
-          Descrição: equipe trabalhando junta, organização de atividade ou tarefa prática.
-        -->
-        <span>Imagem: lideranca-01.jpg</span>
+      <div class="atividade-destaque__media atividade-destaque__media--lideranca" style="padding: 0; border: none;">
+        <img 
+          src="../assets/images/activities/lideranca-01.jpg" 
+          alt="equipe trabalhando junta, organização de atividade ou tarefa prática."
+          style="width: 100%; height: 100%; object-fit: cover; display: block; border: none;"
+        >
       </div>
 
       <div class="atividade-destaque__conteudo">
@@ -267,16 +235,12 @@
     </section>
 
     <section class="section atividade-destaque" id="convivencia">
-      <div class="atividade-destaque__media atividade-destaque__media--convivencia">
-        <!--
-          [IMAGEM NECESSÁRIA]
-          Nome sugerido: convivencia-01.jpg
-          Local: assets/images/activities/
-          Proporção: 4:3 ou 3:2.
-          Uso: fotografia principal da categoria Convivência.
-          Descrição: momento de integração e amizade entre participantes.
-        -->
-        <span>Imagem: convivencia-01.jpg</span>
+      <div class="atividade-destaque__media atividade-destaque__media--convivencia" style="padding: 0; border: none;">
+        <img 
+          src="../assets/images/activities/convivencia-01.jpg" 
+          alt="momento de integração e amizade entre participantes."
+          style="width: 100%; height: 100%; object-fit: cover; display: block; border: none;"
+        >
       </div>
 
       <div class="atividade-destaque__conteudo">
@@ -317,7 +281,6 @@
       </nav>
 
       <div class="site-footer__coluna">
-        <!-- [PENDENTE] Links de redes sociais — ver integrations/social/ -->
         <p>
           Não é da região?
           <a href="https://www.adventistas.org/pt/desbravadores/encontre-um-clube/" target="_blank" rel="noopener">
